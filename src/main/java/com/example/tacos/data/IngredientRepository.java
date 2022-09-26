@@ -1,10 +1,11 @@
 package com.example.tacos.data;
 
 import com.example.tacos.Ingredient;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
-public interface IngredientRepository {
+public interface IngredientRepository extends CrudRepository<Ingredient, String> {
 
     Iterable<Ingredient> findAll();
 
