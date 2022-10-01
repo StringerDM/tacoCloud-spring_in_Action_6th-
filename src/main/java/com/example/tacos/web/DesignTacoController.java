@@ -4,9 +4,9 @@ import com.example.tacos.Ingredient;
 import com.example.tacos.Ingredient.Type;
 import com.example.tacos.Taco;
 import com.example.tacos.TacoOrder;
+import com.example.tacos.TacoUDT;
 import com.example.tacos.data.IngredientRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -54,7 +54,7 @@ public class DesignTacoController {
     }
 
     @PostMapping
-    public String processTaco(@Valid Taco taco, Errors errors, @ModelAttribute TacoOrder tacoOrder) {
+    public String processTaco(@Valid TacoUDT taco, Errors errors, @ModelAttribute TacoOrder tacoOrder) {
         if (errors.hasErrors()) {
             return "design";
         }
